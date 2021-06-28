@@ -1,0 +1,9 @@
+*{
+  font-family: 'Signika Negative', sans-serif;
+}
+
+body{
+  height: 100vh;
+  background-color: dodgerblue;
+  color: white;
+}
