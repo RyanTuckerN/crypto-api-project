@@ -7,3 +7,13 @@ body{
   background-color: dodgerblue;
   color: white;
 }
+input{
+  width: 200px;
+}
+.dropdown-item{
+  background-color: white;
+  width: 200px;
+  color: black;
+  border: solid black 1px;
+
+}
