@@ -5,4 +5,4 @@ This is one of the capstone projects for my 1150 Academy Gold Badge. This is a w
 - Regret tool
   Pick a coin, choose a date, and set an investment amount to see how much money you could have today!
 
-### Live preview
+### [Live preview](https://ryantuckern.github.io/crypto-api-project/)
