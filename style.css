@@ -1,5 +1,6 @@
 *{
   font-family: 'Signika Negative', sans-serif;
+  
 }
 
 body{
@@ -10,10 +11,78 @@ body{
 input{
   width: 200px;
 }
-.dropdown-item{
-  background-color: white;
-  width: 200px;
-  color: black;
-  border: solid black 1px;
+#results-section{
+  padding-top: 15px;
+  font-size: 30px;
+}
+#results-section > div > img {
+  height: 50px;
+  position: relative;
+  /* bottom: 10px; */
+}
 
+header{
+  padding: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+
+header > img {
+  width: 35px;
+  opacity: .75;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* splash screen */
+
+.intro {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(21, 42, 63);
+  transition: 1s;
+}
+
+.icon-header > img {
+  width: 55px;
+}
+
+.icon-header{
+  position: absolute;
+  top: 30%;
+}
+
+.icon {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.icon.active{
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
 }
