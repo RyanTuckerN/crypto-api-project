@@ -1,10 +1,10 @@
 const baseUrl = "http://api.coinlayer.com/";
-const apiKey = "6fb2ce76a036ca2c300086e0c822bc37";
+const apiKey = "5884c48d58ad121da9dbe3c1965fe573";
 const date = document.querySelector("#date");
 const amount = document.querySelector("#amount");
 const button = document.querySelector("button");
 const coins = document.querySelector("#coins");
-const resultsSection = document.querySelector('#results-section')
+const resultsSection = document.querySelector("#results-section");
 
 // *** *** DATE PICKER *** *** //
 let today = new Date();
@@ -66,11 +66,9 @@ async function displayResults() {
     return;
   }
 
-  if (investment === '' || investment <= 0){
-    alert(
-      `Please choose a valid investment value!.`
-    );
-    return
+  if (investment === "" || investment <= 0) {
+    alert(`Please choose a valid investment value!`);
+    return;
   }
 
   //fetch historical data
@@ -93,16 +91,19 @@ async function displayResults() {
   // define variables
   const thenPrice = pastCryptoInfoObj.rates[coin];
   const nowPrice = liveCryptoInfoObj.rates[coin];
-  const coinAmount = (investment / thenPrice)
-  const modernValue = ((coinAmount) * nowPrice)
+  const coinAmount = investment / thenPrice;
+  const modernValue = coinAmount * nowPrice;
   console.log(modernValue);
 
-  //display results
+  // display results
   resultsSection.innerHTML = `<div class="container d-flex flex-row align-items-center justify-content-center">If you had invested $${investment} on ${investmentDate}, today you would have </div>
-  <div><img src="./assets/${coin.toLowerCase()}.png"> <span>${coinAmount.toFixed(5)}</span></div>
+  <div><img src="./assets/${coin.toLowerCase()}.png"> <span>${coinAmount.toFixed(
+    5
+  )}</span></div>
   <p style="font-size: 15px"> which is worth </p>
-  <div><img src="./assets/usd.png"> <span>${toTwoDecimals(modernValue.toLocaleString())}</span></div>`
-  
+  <div><img src="./assets/usd.png"> <span>${toTwoDecimals(
+    modernValue.toLocaleString()
+  )}</span></div>`;
 }
 
 // RUN THE FUNCTION ON BUTTON CLICK
@@ -118,12 +119,79 @@ const toTwoDecimals = (numStr) => {
   return arr.join("");
 };
 
+function convertDate(dateStr) {
+  let year = dateStr.substring(0, 4);
+  let day = parseInt(dateStr.substring(8, 10));
+  let month = parseInt(dateStr.substring(5, 7)) - 1;
+  const monthArr = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  return monthArr[month] + " " + day + ", " + year;
+}
+
 /* 
 TODO: 
-1. integrate date checks!
-2. accept numbers with a dollar sign, commas... (regex??)
+1. integrate date checks! X
+2. accept numbers with a dollar sign, commas...
 3. create a response statement that looks good. 
 4. Use icons/photo URLs
 5. turn submit into a form, make it intuitive
 6. Bootstrap styling
 */
+
+//Alternative fetching method (didn't help):
+
+// try {
+//   const [crypto, cryptoLive] = await Promise.all([
+//     fetch(
+//       baseUrl +
+//         investmentDate +
+//         "&target=USD&symbol=" +
+//         coin +
+//         "?access_key=" +
+//         apiKey ,
+//         {
+//           method: 'GET',
+//           mode: 'no-cors'
+//         }
+//     ),
+//     fetch(
+//       baseUrl + "live&target=USD&symbol=" + coin + "?access_key=" + apiKey, {
+//         method: 'GET',
+//         mode: 'no-cors'
+//       }
+//     ),
+//   ]);
+//   const pastCryptoInfoObj = await crypto.json();
+//   const liveCryptoInfoObj = await cryptoLive.json();
+//   // define variables
+//   const thenPrice = pastCryptoInfoObj.rates[coin];
+//   const nowPrice = liveCryptoInfoObj.rates[coin];
+//   const coinAmount = investment / thenPrice;
+//   const modernValue = coinAmount * nowPrice;
+//   console.log(modernValue);
+
+//   //display results
+//   resultsSection.innerHTML = `<div class="container d-flex flex-row align-items-center justify-content-center">If you had invested $${investment} on ${convertDate(investmentDate)}, today you would have </div>
+// <div><img src="./assets/${coin.toLowerCase()}.png"> <span>${coinAmount.toFixed(
+//     5
+//   )}</span></div>
+// <p style="font-size: 15px"> which is worth </p>
+// <div><img src="./assets/usd.png"> <span>${toTwoDecimals(
+//   modernValue.toLocaleString()
+// )}</span></div>`;
+// } catch (err) {
+//   alert("There was an error... try again later!");
+// }

@@ -23,81 +23,103 @@
     <title>Crypto API Project</title>
   </head>
   <body>
+    <!-- splash screen -->
     <div class="intro d-flex flex-row flex-nowrap justify-content-evenly">
       <div class="icon-header">
-        <img class="icon" src="./assets/btc.png" alt="Bitcoin logo">
-        <img class="icon" src="./assets/eth.png" alt="Etherium logo">
-        <img class="icon" src="./assets/doge.png" alt="Doge logo">
-        <img class="icon" src="./assets/ltc.png" alt="Litecoin logo">
-        <img class="icon" src="./assets/xmr.png" alt="Monero logo">
-        <img class="icon" src="./assets/xrp.png" alt="Ripple logo">
-        <img class="icon" src="./assets/dash.png" alt="Dash logo">
+        <img class="icon" src="./assets/btc.png" alt="Bitcoin logo" />
+        <img class="icon" src="./assets/eth.png" alt="Etherium logo" />
+        <img class="icon" src="./assets/doge.png" alt="Doge logo" />
+        <img class="icon" src="./assets/ltc.png" alt="Litecoin logo" />
+        <img class="icon" src="./assets/xmr.png" alt="Monero logo" />
+        <img class="icon" src="./assets/xrp.png" alt="Ripple logo" />
+        <img class="icon" src="./assets/dash.png" alt="Dash logo" />
       </div>
     </div>
-    <header class="d-flex flex-row flex-nowrap justify-content-evenly">        
-      <img src="./assets/btc.png" alt="Bitcoin logo">
-      <img src="./assets/eth.png" alt="Etherium logo">
-      <img src="./assets/doge.png" alt="Doge logo">
-      <img src="./assets/ltc.png" alt="Litecoin logo">
-      <img src="./assets/xmr.png" alt="Monero logo">
-      <img src="./assets/xrp.png" alt="Ripple logo">
-      <img src="./assets/dash.png" alt="Dash logo"></header>
-    <br />
-    <div
-      class="
-        container
-        d-flex
-        flex-column
-        justify-content-center
-        align-items-center
-      "
-    >
-      <h1>Cryptocurrency Regret Tool</h1>
 
-      <h3>
-        Ever wondered how much money you have left on the table? Wonder no more!
-      </h3>
-      <p>
-        Pick a coin, choose a date, and set an investment amount to see how much
-        money you could have today.
-      </p>
-      <div
-        id="input-container"
-        class="d-flex flex-column justify-content-center align-items-center"
-      >
-        <div>
-          <label for="coins">Choose a coin:</label><br />
-          <select name="coins" id="coins">
-            <option value="BTC">Bitcoin</option>
-            <option value="ETH">Etherium</option>
-            <option value="DOGE">Dogecoin</option>
-            <option value="LTC">Litecoin</option>
-            <option value="XMR">Monero</option>
-            <option value="XRP">Ripple</option>
-            <option value="DASH">Dash</option>
-          </select>
-        </div>
+    <!-- error screen popup -->
+    <!-- <div class="popup-modal shadow bg-danger" data-popup-modal="one">
+      <i class="fas fa-2x fa-times text-white bg-secondary p-3 popup-modal_close"></i>
+      <h1 class="font-weight-bold">Error!</h1>
+      <p>We're sorry, something went wrong. Please try again later!</p>
+    </div> -->
 
-        <br />
-        <div>
-          <label for="start">Pick a start date:</label><br />
-          <input type="date" id="date" name="date" />
-        </div>
-        <!-- <div class="alert alert-warning alert-dismissible fade show text-white bg-danger" role="alert">
-        <strong>Hey!</strong> You should pick a valid date.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div> -->
-        <br />
-        <div>
-          <label for="amount">Choose an investment amount:</label><br />
-          $<input type="text" name="amount" id="amount" placeholder="3,000" />
-        </div>
-      </div>
+    <!-- header with icons -->
+    <header class="d-flex flex-row flex-nowrap justify-content-evenly">
+      <img src="./assets/btc.png" alt="Bitcoin logo" />
+      <img src="./assets/eth.png" alt="Etherium logo" />
+      <img src="./assets/doge.png" alt="Doge logo" />
+      <img src="./assets/ltc.png" alt="Litecoin logo" />
+      <img src="./assets/xmr.png" alt="Monero logo" />
+      <img src="./assets/xrp.png" alt="Ripple logo" />
+      <img src="./assets/dash.png" alt="Dash logo" />
+    </header>
+    <div id="whole-page">
       <br />
-      <button>Click me to run</button>
-    </div>
-    <div id="results-section" class="container d-flex flex-column align-items-center justify-content-center">
-      
+      <div
+        class="
+          container
+          d-flex
+          flex-column
+          justify-content-center
+          align-items-center
+        "
+      >
+        <h1 class="font-weight-bold display-2">Cryptocurrency Regret Tool</h1>
+        <br />
+        <h3 class="text-center">
+          Ever wondered how much money you have left on the table? Wonder no more!
+        </h3>
+        <br />
+        <p class="text-center">
+          <em>
+            Pick a coin, choose a date, and set an investment amount to see how much
+            money you could have today.
+          </em>
+        </p>
+        <div
+          id="input-container"
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <div>
+            <label for="coins">Choose a coin:</label><br />
+            <select name="coins" id="coins">
+              <option value="BTC">Bitcoin</option>
+              <option value="ETH">Etherium</option>
+              <option value="DOGE">Dogecoin</option>
+              <option value="LTC">Litecoin</option>
+              <option value="XMR">Monero</option>
+              <option value="XRP">Ripple</option>
+              <option value="DASH">Dash</option>
+            </select>
+          </div>
+          <br />
+          <div>
+            <label for="start">Pick a start date:</label><br />
+            <input type="date" id="date" name="date" />
+          </div>
+          <!-- <div class="alert alert-warning alert-dismissible fade show text-white bg-danger" role="alert">
+          <strong>Hey!</strong> You should pick a valid date.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> -->
+          <br />
+          <div>
+            <label for="amount">Choose an investment amount:</label><br />
+            $<input type="text" name="amount" id="amount" placeholder="3,000" />
+          </div>
+        </div>
+        <br />
+        <button>Click to run</button>
+      </div>
+      <div
+        id="results-section"
+        class="
+          container
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      ></div>
     </div>
 
     <!-- BOOTSTRAP 5 JS -->
@@ -107,8 +129,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- SPLASHSCREEN -->
-    <!-- From https://www.youtube.com/watch?v=2ak37WrbSDg
-    Conor Bailey : Create an Animated Website Intro / Splash Screen With HTML /CSS / JavaScript -->
     <script src="splash.js"></script>
     <!-- MY SCRIPT -->
     <script src="script.js"></script>

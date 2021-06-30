@@ -1,17 +1,16 @@
-*{
-  font-family: 'Signika Negative', sans-serif;
-  
+* {
+  font-family: "Signika Negative", sans-serif;
 }
 
-body{
+body {
   height: 100vh;
   background-color: dodgerblue;
   color: white;
 }
-input{
+input {
   width: 200px;
 }
-#results-section{
+#results-section {
   padding-top: 15px;
   font-size: 30px;
 }
@@ -21,36 +20,70 @@ input{
   /* bottom: 10px; */
 }
 
-header{
+header {
   padding: 20px;
   margin-left: 20%;
   margin-right: 20%;
 }
 
-
 header > img {
   width: 35px;
-  opacity: .75;
+  opacity: 0.75;
 }
 
+#whole-page {
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
+  animation-delay: 2300ms;
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /* splash screen */
 
@@ -69,7 +102,7 @@ header > img {
   width: 55px;
 }
 
-.icon-header{
+.icon-header {
   position: absolute;
   top: 30%;
 }
@@ -81,7 +114,7 @@ header > img {
   opacity: 0;
 }
 
-.icon.active{
+.icon.active {
   bottom: 0;
   opacity: 1;
   transition: ease-in-out 0.5s;
