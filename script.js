@@ -96,7 +96,7 @@ async function displayResults() {
   console.log(modernValue);
 
   // display results
-  resultsSection.innerHTML = `<div class="container d-flex flex-row align-items-center justify-content-center">If you had invested $${investment} on ${investmentDate}, today you would have </div>
+  resultsSection.innerHTML = `<div class="container d-flex flex-row align-items-center justify-content-center text-center">If you had invested $${investment} in ${coin.toUpperCase()} on ${convertDate(investmentDate)} and HODLed, today you would have </div>
   <div><img src="./assets/${coin.toLowerCase()}.png"> <span>${coinAmount.toFixed(
     5
   )}</span></div>
