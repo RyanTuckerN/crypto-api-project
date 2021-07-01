@@ -36,13 +36,6 @@
       </div>
     </div>
 
-    <!-- error screen popup -->
-    <!-- <div class="popup-modal shadow bg-danger" data-popup-modal="one">
-      <i class="fas fa-2x fa-times text-white bg-secondary p-3 popup-modal_close"></i>
-      <h1 class="font-weight-bold">Error!</h1>
-      <p>We're sorry, something went wrong. Please try again later!</p>
-    </div> -->
-
     <!-- header with icons -->
     <header class="d-flex flex-row flex-nowrap justify-content-evenly">
       <img src="./assets/btc.png" alt="Bitcoin logo" />
@@ -76,39 +69,37 @@
             money you could have today.
           </em>
         </p>
-        <div
-          id="input-container"
-          class="d-flex flex-column justify-content-center align-items-center"
-        >
-          <div>
-            <label for="coins">Choose a coin:</label><br />
-            <select name="coins" id="coins">
-              <option value="BTC">Bitcoin</option>
-              <option value="ETH">Etherium</option>
-              <option value="DOGE">Dogecoin</option>
-              <option value="LTC">Litecoin</option>
-              <option value="XMR">Monero</option>
-              <option value="XRP">Ripple</option>
-              <option value="DASH">Dash</option>
-            </select>
+        <form class="d-flex flex-column">
+          <div
+            id="input-container"
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <div>
+              <label for="coins">Choose a coin:</label><br />
+              <select name="coins" id="coins">
+                <option value="BTC">Bitcoin</option>
+                <option value="ETH">Etherium</option>
+                <option value="DOGE">Dogecoin</option>
+                <option value="LTC">Litecoin</option>
+                <option value="XMR">Monero</option>
+                <option value="XRP">Ripple</option>
+                <option value="DASH">Dash</option>
+              </select>
+            </div>
+            <br />
+            <div>
+              <label for="start">Pick a start date:</label><br />
+              <input type="date" id="date" name="date" />
+            </div>
+            <br />
+            <div>
+              <label for="amount">Choose an investment amount:</label><br />
+              $<input type="text" name="amount" id="amount" placeholder="3,000" />
+            </div>
           </div>
           <br />
-          <div>
-            <label for="start">Pick a start date:</label><br />
-            <input type="date" id="date" name="date" />
-          </div>
-          <!-- <div class="alert alert-warning alert-dismissible fade show text-white bg-danger" role="alert">
-          <strong>Hey!</strong> You should pick a valid date.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div> -->
-          <br />
-          <div>
-            <label for="amount">Choose an investment amount:</label><br />
-            $<input type="text" name="amount" id="amount" placeholder="3,000" />
-          </div>
-        </div>
-        <br />
-        <button class="btn btn-light">Click to run</button>
+          <button class="btn btn-light">Click to run</button>
+        </form>
       </div>
       <div
         id="results-section"
@@ -121,6 +112,23 @@
         "
       ></div>
     </div>
+
+    <footer class="d-flex flex-row justify-content-center">
+      <div>
+        <div>Copyright &copy; 2021 - Ryan Tucker</div>
+
+        <div class="d-flex flex-row justify-content-center">
+          <a href="https://github.com/RyanTuckerN/" target="_blank"
+            ><img class="social-links" src="./assets/github.png" alt=""
+          /></a>
+          <a
+            href="https://www.linkedin.com/in/nick-tucker-570b0020b"
+            target="_blank"
+            ><img class="social-links" src="./assets/linkedin-round.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
 
     <!-- BOOTSTRAP 5 JS -->
     <script
